@@ -1,11 +1,11 @@
 #[derive(Debug)]
-struct EucRes {
+pub struct EucRes {
     d: i32,
     s: i32,
     t: i32
 }
 
-fn euc_ext(d1:i32, d2:i32) -> EucRes {
+pub fn euc_ext(d1:i32, d2:i32) -> EucRes {
     let mut d = vec![d1, d2];
     let mut q = vec![0, (d1 - d1%d2) / d2];
     let mut s = vec![1,0];
