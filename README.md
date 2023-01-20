@@ -1,4 +1,4 @@
-# euclides
+# euc_lib
 Easy to use implementation of extended and normanl Euclidean algorithm
 
 ## Example usage:
@@ -26,3 +26,8 @@ fn main() {
 ```
 5
 ```
+
+# Github:
+<a href="https://github.com/PTFOPlayer">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg" height="45px" alt="github" />
+</a>
