@@ -1,5 +1,5 @@
 # euclides
-Simple implementation of euclides algorithm
+Easy to use implementation of extended and normanl Euclidean algorithm
 
 ## Example usage:
 ### Extended
