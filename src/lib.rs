@@ -1,8 +1,8 @@
 #[derive(Debug)]
 pub struct EucRes {
-    d: i32,
-    s: i32,
-    t: i32
+    pub d: i32,
+    pub s: i32,
+    pub t: i32
 }
 
 pub fn euc_ext(d1:i32, d2:i32) -> EucRes {
