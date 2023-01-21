@@ -16,7 +16,7 @@ EucRes { d: 5, s: -1, t: 4 }
 ```
 ### Simple
 > Program
-```
+```rs
 use euc_lib;
 fn main() {
     prinln!("{}, euc_lib::euc(135, 35)");
