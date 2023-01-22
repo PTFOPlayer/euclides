@@ -27,6 +27,20 @@ fn main() {
 5
 ```
 
+## LCM 
+This version implements Least common multiple calculating method using gcd (Euclidean algorithm)
+> Program
+```rs
+use euc_lib;
+fn main () {
+    println!("{:?}", euc_lib::lcm(21, 6))
+}
+```
+> Output
+```
+42
+```
+
 # Github:
 ### My github:
 <a href="https://github.com/PTFOPlayer">

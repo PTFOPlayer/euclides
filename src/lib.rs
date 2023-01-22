@@ -12,7 +12,7 @@ pub fn euc_ext(d1: i32, d2: i32) -> EucRes {
     let mut qp = d1 / d2;
 
     let mut i = 2;
-    loop {
+    while d2 != 0 {
         d.append(&mut vec![d[i - 2] % d[i - 1]]);
         if d[i] == 0 {
             break;
@@ -31,18 +31,13 @@ pub fn euc_ext(d1: i32, d2: i32) -> EucRes {
     };
 }
 
-pub fn euc(d1: i32, d2: i32) -> i32 {
-    let mut d = vec![d1, d2];
-    let mut i = 2;
-    loop {
-        d.append(&mut vec![d[i - 2] % d[i - 1]]);
-        if d[i] == 0 {
-            break;
-        };
-        i += 1;
+pub fn euc(mut d1: i32, mut d2: i32) -> i32 {
+    while d2 != 0 {
+        let t = d2;
+        d2 = d1 % d2;
+        d1 = t.clone();
     }
-    i -= 1;
-    d[i]
+    return d1;
 }
 
 pub fn euc_recursive(d1: i32, d2: i32) -> i32 {
@@ -51,4 +46,12 @@ pub fn euc_recursive(d1: i32, d2: i32) -> i32 {
     } else {
         return euc_recursive(d2, d1 % d2);
     }
+}
+
+pub fn lcm(d1:i32, d2:i32) -> i32 {
+    let mut temp = d1 * d2;
+    if temp < 0 {
+        temp = temp * -1;
+    }
+    return temp/euc(d1, d2);
 }

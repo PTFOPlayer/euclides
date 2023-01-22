@@ -1,4 +1,4 @@
 use euc_lib;
 fn main () {
-    println!("{}", euc_lib::euc_recursive(135, 35))
+    println!("{:?}", euc_lib::lcm(21, 6))
 }
