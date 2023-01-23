@@ -48,9 +48,10 @@ pub fn euc_recursive(d1: i32, d2: i32) -> i32 {
 }
 
 pub fn lcm(d1: i32, d2: i32) -> i32 {
-    let mut temp = d1 * d2;
-    if temp < 0 {
-        temp = temp * -1;
-    }
-    return temp / euc(d1, d2);
+    return i32::abs(d1 * d2) / euc(d1, d2);
 }
+
+pub fn lcm_recursive(d1: i32, d2: i32) -> i32 {
+    return i32::abs(d1 * d2) / euc_recursive(d1, d2);
+}
+
