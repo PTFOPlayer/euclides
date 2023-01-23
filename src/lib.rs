@@ -6,10 +6,8 @@ pub struct EucRes {
 }
 
 pub fn euc_ext(mut d1: i32, mut d2: i32) -> EucRes {
-    let mut spp = 1;
-    let mut sp = 0;
-    let mut tpp = 0;
-    let mut tp = 1;
+    let (mut spp, mut sp) = (1, 0);
+    let (mut tpp, mut tp) = (0, 1);
     let mut q = d1 / d2;
 
     loop {
@@ -47,6 +45,13 @@ pub fn euc_recursive(d1: i32, d2: i32) -> i32 {
     }
 }
 
+pub fn euc_from_vec(mut d: Vec<i32>) -> i32 {
+    if d.len() <= 2 {
+        return euc(d[0], d[1]);
+    }
+    euc(d.pop().unwrap(), euc_from_vec(d.clone()))
+}
+
 pub fn lcm(d1: i32, d2: i32) -> i32 {
     return i32::abs(d1 * d2) / euc(d1, d2);
 }
@@ -54,4 +59,3 @@ pub fn lcm(d1: i32, d2: i32) -> i32 {
 pub fn lcm_recursive(d1: i32, d2: i32) -> i32 {
     return i32::abs(d1 * d2) / euc_recursive(d1, d2);
 }
-
