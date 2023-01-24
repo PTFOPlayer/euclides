@@ -37,7 +37,10 @@ pub fn euc(mut d1: i32, mut d2: i32) -> i32 {
     return d1;
 }
 
-pub fn euc_recursive(d1: i32, d2: i32) -> i32 {
+pub fn euc_recursive(mut d1: i32, mut d2: i32) -> i32 {
+    if d1 > d2 {
+        (d1,d2) =(d2,d1) 
+    }
     if d1 % d2 == 0 {
         return d2;
     } else {
@@ -45,11 +48,13 @@ pub fn euc_recursive(d1: i32, d2: i32) -> i32 {
     }
 }
 
-pub fn euc_from_vec(mut d: Vec<i32>) -> i32 {
-    if d.len() <= 2 {
-        return euc(d[0], d[1]);
+pub fn euc_from_vec(mut d: Vec<i32>) -> Result<i32, String> {
+    if d.len() == 2 {
+        return Ok(euc(d[0], d[1]));
+    } else if d.len() < 2{
+        return Err("critical error occured, length of vector smaller than 2, unable to calculate euc".to_owned());
     }
-    euc(d.pop().unwrap(), euc_from_vec(d.clone()))
+    Ok(euc(d.pop().expect("error occured calculating euc"), euc_from_vec(d.clone()).unwrap()))
 }
 
 pub fn lcm(d1: i32, d2: i32) -> i32 {
