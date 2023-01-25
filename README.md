@@ -55,7 +55,8 @@ fn main() {
 Ok(7)
 ```
 
-## LCM 
+## LCM
+### Simple
 This version implements Least common multiple calculating method using gcd (Euclidean algorithm)
 > Program
 ```rs
@@ -67,4 +68,17 @@ fn main () {
 > Output
 ```
 42
+```
+
+### Vector as argument
+> Program
+```rs
+use euc_lib;
+fn main() {
+    println!("{:?}", lib::lcm_from_vec(vec![12,4,8]))
+}
+```
+> Output
+```
+Ok(24)
 ```

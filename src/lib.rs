@@ -64,3 +64,12 @@ pub fn lcm(d1: i32, d2: i32) -> i32 {
 pub fn lcm_recursive(d1: i32, d2: i32) -> i32 {
     return i32::abs(d1 * d2) / euc_recursive(d1, d2);
 }
+
+pub fn lcm_from_vec(mut d: Vec<i32>) -> Result<i32, String> {
+    if d.len() == 2 {
+        return Ok(lcm(d[0], d[1]));
+    } else if d.len() < 2{
+        return Err("critical error occured, length of vector smaller than 2, unable to calculate lcm".to_owned());
+    }
+    Ok(lcm(d.pop().expect("error occured calculating lcm"), lcm_from_vec(d.clone()).unwrap()))
+}

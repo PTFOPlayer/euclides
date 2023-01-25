@@ -1,9 +1,14 @@
 [package]
 name = "euc_lib"
-version = "0.1.8"
+version = "0.1.9"
 edition = "2021"
 license = "GPL-3.0"
 license_file="LICENSE"
 description="Easy to use implementation of extended and normanl Euclidean algorithm"
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "euc_lib"
+path = "./src/lib.rs"
+crate-type = ["lib"]
+
 [dependencies]
