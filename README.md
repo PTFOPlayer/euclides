@@ -23,7 +23,7 @@ Easy to use implementation of extended and normanl Euclidean algorithm
 ```rs
 use euc_lib;
 fn main() {
-    prinln!("{:?}", euc_lib::euc_ext(135, 35));
+    prinln!("{:?}", euc_lib::I32::euc_ext(135, 35));
 }
 ```
 > Output
@@ -35,7 +35,7 @@ EucRes { d: 5, s: -1, t: 4 }
 ```rs
 use euc_lib;
 fn main() {
-    prinln!("{}", euc_lib::euc(135, 35)); // there is recursive variant too: euc_recursive(135,35)
+    prinln!("{}", euc_lib::I32::euc(135, 35)); // there is recursive variant too: euc_recursive(135,35)
 }
 ```
 > Output
@@ -47,7 +47,7 @@ fn main() {
 ```rs
 use euc_lib;
 fn main() {
-    println!("{:?}", euc_lib::euc_from_vec(vec![21, 14, 56]));
+    println!("{:?}", euc_lib::I32::euc_from_vec(vec![21, 14, 56]));
 }
 ```
 > Output
@@ -62,7 +62,7 @@ This version implements Least common multiple calculating method using gcd (Eucl
 ```rs
 use euc_lib;
 fn main () {
-    println!("{:?}", euc_lib::lcm(21, 6)) // there is recursive variant too: lcm_recursive
+    println!("{:?}", euc_lib::I32::lcm(21, 6)) // there is recursive variant too: lcm_recursive
 }
 ```
 > Output
@@ -75,10 +75,24 @@ fn main () {
 ```rs
 use euc_lib;
 fn main() {
-    println!("{:?}", lib::lcm_from_vec(vec![12,4,8]))
+    println!("{:?}", euc_lib::I32::lcm_from_vec(vec![12,4,8]))
 }
 ```
 > Output
 ```
 Ok(24)
+```
+
+## i64 support
+To use i64 versions of all functions just use euc_lib::I64 instead of euc_lib::I32
+> Program
+```rs
+use euc_lib;
+fn main() {
+    prinln!("{:?}", euc_lib::I64::euc_ext(135, 35));
+}
+```
+> Output
+```
+EucRes { d: 5, s: -1, t: 4 }
 ```
