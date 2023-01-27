@@ -1,6 +1,6 @@
 [package]
 name = "euc_lib"
-version = "0.1.9"
+version = "0.2.1"
 edition = "2021"
 license = "GPL-3.0"
 license_file="LICENSE"
