@@ -23,12 +23,12 @@ Easy to use implementation of extended and normanl Euclidean algorithm
 ```rs
 use euc_lib;
 fn main() {
-    prinln!("{:?}", euc_lib::I32::euc_ext(135, 35));
+    prinln!("{}", euc_lib::I32::euc_ext(135, 35));
 }
 ```
 > Output
 ```
-EucRes { d: 5, s: -1, t: 4 }
+NWD = 5, S = -1, T = 4
 ```
 ### Simple
 > Program
@@ -62,7 +62,7 @@ This version implements Least common multiple calculating method using gcd (Eucl
 ```rs
 use euc_lib;
 fn main () {
-    println!("{:?}", euc_lib::I32::lcm(21, 6)) // there is recursive variant too: lcm_recursive
+    println!("{}", euc_lib::I32::lcm(21, 6)) // there is recursive variant too: lcm_recursive
 }
 ```
 > Output
@@ -85,14 +85,15 @@ Ok(24)
 
 ## i64 support
 To use i64 versions of all functions just use euc_lib::I64 instead of euc_lib::I32
+### Example of I64 usage
 > Program
 ```rs
 use euc_lib;
 fn main() {
-    prinln!("{:?}", euc_lib::I64::euc_ext(135, 35));
+    prinln!("{}", euc_lib::I64::euc_ext(135, 35));
 }
 ```
 > Output
 ```
-EucRes { d: 5, s: -1, t: 4 }
+NWD = 5, S = -1, T = 4
 ```

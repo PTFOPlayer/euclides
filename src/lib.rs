@@ -1,8 +1,22 @@
+use std::fmt;
+
 #[derive(Debug)]
 pub struct EucRes<T> {
     pub d: T,
     pub s: T,
     pub t: T,
+}
+
+impl fmt::Display for EucRes<i32> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "NWD = {}, S = {}, T = {}", self.d, self.s, self.t)
+    }
+}
+
+impl fmt::Display for EucRes<i64> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "NWD = {}, S = {}, T = {}", self.d, self.s, self.t)
+    }
 }
 
 pub struct I32;
@@ -87,7 +101,7 @@ impl I64 {
     let (mut spp, mut sp) = (1, 0);
     let (mut tpp, mut tp) = (0, 1);
     let mut q = d1 / d2;
-
+    
     loop {
         (d1, d2) = (d2, d1 % d2);
 
