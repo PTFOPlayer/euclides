@@ -1,5 +1,9 @@
 # euc_lib
-Easy to use implementation of extended and normanl Euclidean algorithm
+Liblary implements:
+euc - euclidean algorithm
+euc_ext - extended euclidean algorithm
+lcm - least common multiple
+congruence - congruence soliving function, finding smallest x for solution
 
 # Want to contribute?:
 ### My github:
@@ -17,7 +21,8 @@ Easy to use implementation of extended and normanl Euclidean algorithm
 <br/>
 <br/>
 
-## Example usage:
+# Example usage:
+## Euclides
 ### Extended
 > Program
 ```rs
@@ -83,6 +88,18 @@ fn main() {
 Ok(24)
 ```
 
+## Congruence 
+> Program
+```rs
+use euc_lib;
+fn main() {
+    println!("{:?}", euc_lib::I32::congruence(9,21,30))
+}
+```
+> Output
+```
+Ok(9)
+```
 ## i64 support
 To use i64 versions of all functions just use euc_lib::I64 instead of euc_lib::I32
 ### Example of I64 usage
