@@ -1,3 +1,4 @@
 [x] i64 support
+[x] i128 support
 [x] congruence solver
 [] extern C Functions
