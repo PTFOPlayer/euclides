@@ -4,4 +4,4 @@ version = 3
 
 [[package]]
 name = "euc_lib"
-version = "0.2.4"
+version = "0.2.5"

@@ -19,6 +19,12 @@ impl fmt::Display for EucRes<i64> {
     }
 }
 
+impl fmt::Display for EucRes<i128> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "NWD = {}, S = {}, T = {}", self.d, self.s, self.t)
+    }
+}
+
 pub struct I32;
 
 impl I32 {
@@ -73,7 +79,10 @@ impl I32 {
         }
         Ok(Self::euc(
             d.pop().expect("error occured calculating euc"),
-            Self::euc_from_vec(d.clone()).unwrap(),
+            match Self::euc_from_vec(d.clone()) {
+                Ok(res) => res,
+                Err(err) => return Err(err),
+            },
         ))
     }
 
@@ -96,7 +105,10 @@ impl I32 {
         }
         Ok(Self::lcm(
             d.pop().expect("error occured calculating lcm"),
-            Self::lcm_from_vec(d.clone()).unwrap(),
+            match Self::lcm_from_vec(d.clone()) {
+                Ok(res) => res,
+                Err(err) => return Err(err),
+            },
         ))
     }
 
@@ -170,7 +182,10 @@ impl I64 {
         }
         Ok(Self::euc(
             d.pop().expect("error occured calculating euc"),
-            Self::euc_from_vec(d.clone()).unwrap(),
+            match Self::euc_from_vec(d.clone()) {
+                Ok(res) => res,
+                Err(err) => return Err(err),
+            },
         ))
     }
 
@@ -193,7 +208,10 @@ impl I64 {
         }
         Ok(Self::lcm(
             d.pop().expect("error occured calculating lcm"),
-            Self::lcm_from_vec(d.clone()).unwrap(),
+            match Self::lcm_from_vec(d.clone()) {
+                Ok(res) => res,
+                Err(err) => return Err(err),
+            },
         ))
     }
 
@@ -267,7 +285,10 @@ impl I128 {
         }
         Ok(Self::euc(
             d.pop().expect("error occured calculating euc"),
-            Self::euc_from_vec(d.clone()).unwrap(),
+            match Self::euc_from_vec(d.clone()) {
+                Ok(res) => res,
+                Err(err) => return Err(err),
+            },
         ))
     }
 
@@ -290,7 +311,10 @@ impl I128 {
         }
         Ok(Self::lcm(
             d.pop().expect("error occured calculating lcm"),
-            Self::lcm_from_vec(d.clone()).unwrap(),
+            match Self::lcm_from_vec(d.clone()) {
+                Ok(res) => res,
+                Err(err) => return Err(err),
+            },
         ))
     }
 

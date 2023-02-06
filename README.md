@@ -1,9 +1,9 @@
 # euc_lib
-Liblary implements:
-euc - euclidean algorithm
-euc_ext - extended euclidean algorithm
-lcm - least common multiple
-congruence - congruence soliving function, finding smallest x for solution
+### Liblary implements:
+ * euc - euclidean algorithm
+ * euc_ext - extended euclidean algorithm
+ * lcm - least common multiple
+ * congruence - congruence soliving function, finding smallest x for solution
 
 # Want to contribute?:
 ### My github:
