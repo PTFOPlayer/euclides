@@ -25,6 +25,9 @@ impl fmt::Display for EucRes<i128> {
     }
 }
 
+mod traits;
+pub use traits::*;
+
 mod i32_lib;
 mod i64_lib;
 mod i128_lib;
