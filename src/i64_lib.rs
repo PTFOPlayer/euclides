@@ -2,7 +2,7 @@ use crate::*;
 
 pub struct I64;
 
-impl EucExt<i64> for I64{}
+impl EucExt<i64> for I64 {}
 impl Euc<i64> for I64 {}
 impl EucRecursive<i64> for I64 {}
 

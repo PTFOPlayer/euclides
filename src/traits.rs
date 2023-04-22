@@ -46,7 +46,6 @@ where
     }
 }
 
-
 pub trait EucRecursive<T>
 where
     T: Zero + Copy + std::ops::Rem<Output = T> + std::cmp::Ord,

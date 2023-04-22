@@ -2,12 +2,11 @@ use crate::*;
 
 pub struct I32;
 
-impl EucExt<i32> for I32{}
+impl EucExt<i32> for I32 {}
 impl Euc<i32> for I32 {}
 impl EucRecursive<i32> for I32 {}
 
 impl I32 {
-
     pub fn euc_from_vec(mut d: Vec<i32>) -> Result<i32, String> {
         if d.len() == 2 {
             return Ok(Self::euc(d[0], d[1]));
