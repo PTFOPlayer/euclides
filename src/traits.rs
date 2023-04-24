@@ -1,6 +1,7 @@
 use crate::EucRes;
 extern crate num;
 use num::{ One, Zero, Signed};
+
 pub trait EucExt<T>
 where
     T: One
