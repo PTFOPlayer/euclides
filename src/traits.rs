@@ -13,6 +13,8 @@ where
         + std::ops::Sub<Output = T>
         + std::cmp::Ord,
 {
+    
+    /// Returns extended euclidean algorithm result.
     fn euc_ext(mut d1: T, mut d2: T) -> EucRes<T> {
         let (mut spp, mut sp) = (T::one(), T::zero());
         let (mut tpp, mut tp) = (T::zero(), T::one());
@@ -39,6 +41,7 @@ pub trait Euc<T>
 where
     T: std::ops::Rem<Output = T> + Zero + std::cmp::Ord + Copy,
 {
+    /// Returns normal euclidean algorithm result.
     fn euc(mut d1: T, mut d2: T) -> T {
         while d2 != T::zero() {
             (d1, d2) = (d2, d1 % d2);
@@ -46,6 +49,7 @@ where
         return d1;
     }
 
+    /// Returns normal euclidean algorithm result from 2 or more numbers.
     fn euc_from_vec(mut d: Vec<T>) -> Result<T, String> {
         if d.len() == 2 {
             return Ok(Self::euc(d[0], d[1]));
@@ -64,6 +68,7 @@ where
         ))
     }
 
+    /// Returns normal euclidean algorithm result but uses recursion insted of loop.
     fn euc_recursive(mut d1: T, mut d2: T) -> T {
         if d1 > d2 {
             (d1, d2) = (d2, d1)
@@ -80,14 +85,18 @@ pub trait Lcm<T>: self::Euc<T> + self::Euc<T>
 where
     T: std::ops::Mul<Output = T> + std::ops::Rem<Output = T> + Zero + std::cmp::Ord + Copy + Signed,
 {
+
+    /// Returns least common multiple.
     fn lcm(d1: T, d2: T) -> T {
         T::abs(&(d1 * d2)) / Self::euc(d1, d2)
     }
 
+    /// Returns least common multiple but uses recursive euclides.
     fn lcm_recursive(d1: T, d2: T) -> T {
         T::abs(&(d1 * d2)) / Self::euc_recursive(d1, d2)
     }
 
+    /// Returns least common multiple from 2 or more numbers.
     fn lcm_from_vec(mut d: Vec<T>) -> Result<T, String> {
         if d.len() == 2 {
             return Ok(Self::lcm(d[0], d[1]));
@@ -118,6 +127,9 @@ where
         + std::ops::Sub<Output = T>
         + std::cmp::Ord,
 {
+    /// Returns congruence result 
+    /// 8x = 2 (mod 17)
+    /// ax = b (mod n)
     fn congruence(mut a: T, mut b: T, n: T) -> Result<T, String> {
         a = a % n;
         b = b % n;
